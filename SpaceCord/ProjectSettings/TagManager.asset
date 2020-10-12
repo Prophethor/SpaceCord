@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Left
+  - Right
+  - BulletL
+  - BulletR
+  - Enemy
   - 
   - 
   - 
