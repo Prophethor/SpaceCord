@@ -8,15 +8,17 @@ public class Background : MonoBehaviour
 
     private Material bgMat;
 
+    private GameManager gm;
+
     [HideInInspector]
     public static float camLeft, camRight, camUp, camDown;
 
     void CalculateCamBorders (float distance) {
 
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Mathf.Clamp(Mathf.Abs(distance) / 1.5f, 5, 9),0.01f); 
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, Mathf.Clamp(Mathf.Abs(distance) / 1.5f, 7, 10),0.01f); 
         //background.transform.localScale = new Vector3(Camera.main.orthographicSize * 4, Camera.main.orthographicSize * 4);
 
-        Vector3 newPos = Vector3.Lerp(Camera.main.transform.position, (left.transform.position + right.transform.position) / 2, 0.007f);
+        Vector3 newPos = Vector3.Lerp(Camera.main.transform.position, (left.transform.position + right.transform.position) / 2, 0.005f);
         newPos.z = -10;
         Camera.main.transform.position = newPos;
 
@@ -29,12 +31,13 @@ public class Background : MonoBehaviour
     void Start()
     {
         bgMat = GetComponent<MeshRenderer>().material;
+        gm = FindObjectOfType<GameManager>();
     }
 
     void Update()
     {
         Vector2 dir = left.transform.position - right.transform.position;
         CalculateCamBorders(dir.magnitude);
-        bgMat.mainTextureOffset += Vector2.one * 0.00025f;
+        if(!gm.isOver) bgMat.mainTextureOffset += Vector2.one * 0.0003f;
     }
 }

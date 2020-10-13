@@ -98,7 +98,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -136,5 +136,6 @@ MonoBehaviour:
   colorSprites:
   - {fileID: 21300000, guid: f01ec6b60722cba47940fcd9a7023c47, type: 3}
   - {fileID: 21300000, guid: c97567de3d74b1048bdcdf1d3925aef2, type: 3}
-  - {fileID: 21300000, guid: 93e1815a8510a8f4198c9f092a4d4227, type: 3}
+  UFODeath: {fileID: 3961739304513980332, guid: d8f2d680ba228fc48bd2e99400cb907b,
+    type: 3}
   color: 0
