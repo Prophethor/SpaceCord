@@ -20,6 +20,12 @@ public class UFO : MonoBehaviour
         }
     }
 
+    private void Update () {
+        if((transform.position-Camera.main.transform.position).magnitude > 100) {
+            Destroy(gameObject);
+        }
+    }
+
     public void Die() {
         gm.Score(Random.Range(10, 16));
         Instantiate(UFODeath, transform.position, Quaternion.identity);

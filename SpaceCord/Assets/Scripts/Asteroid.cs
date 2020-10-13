@@ -14,6 +14,12 @@ public class Asteroid : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
     }
 
+    private void Update () {
+        if ((transform.position - Camera.main.transform.position).magnitude > 100) {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D (Collision2D collision) {
         if (collision.gameObject.layer == LayerMask.NameToLayer("BulletR") || collision.gameObject.layer == LayerMask.NameToLayer("BulletL")) {
             hp -= 50;

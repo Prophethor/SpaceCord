@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2430388653555898103}
   - component: {fileID: 4157600547216465738}
   m_Layer: 11
-  m_Name: greenMissile
+  m_Name: BlueMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b26be5c97edde34bb2b7f377f6df273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignore:
-    serializedVersion: 2
-    m_Bits: 256
-  ps: {fileID: 6188020393875713179, guid: 83387f37ae74df24194ff303bc0daf7a, type: 3}
+  explosion: {fileID: 6188020393875713179, guid: 83387f37ae74df24194ff303bc0daf7a,
+    type: 3}

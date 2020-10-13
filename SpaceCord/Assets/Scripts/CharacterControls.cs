@@ -15,7 +15,6 @@ public class CharacterControls : MonoBehaviour
     public float missileSpeed = 15;
 
     private int hp = 100;
-
     private GameManager gm;
     private Rigidbody2D rb; 
 
@@ -29,7 +28,7 @@ public class CharacterControls : MonoBehaviour
 
     void Update()
     {
-        if (!gm.isOver) {
+        if (!gm.IsOver()) {
 
             dir = target.position - transform.position;
 
@@ -58,7 +57,7 @@ public class CharacterControls : MonoBehaviour
     }
 
     private void OnCollisionEnter2D (Collision2D collision) {
-        hp -= 20;
+        hp -= Random.Range(10,21);
         gm.Score(Random.Range(-7, -4));
         HPBar.GetChild(0).localScale = new Vector3((float) hp / 100 , HPBar.GetChild(0).localScale.y);
         if (hp <= 0) gm.GameOver();

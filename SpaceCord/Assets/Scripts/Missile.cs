@@ -5,8 +5,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
 
-    public LayerMask ignore;
-    public ParticleSystem ps;
+    public ParticleSystem explosion;
 
     void Start()
     {
@@ -14,7 +13,7 @@ public class Missile : MonoBehaviour
     }
 
     private void OnCollisionEnter2D (Collision2D collision) {
-        ParticleSystem _ps = Instantiate(ps, transform.position, Quaternion.identity);
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
